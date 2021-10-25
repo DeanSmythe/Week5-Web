@@ -12,6 +12,13 @@ get '/folder2' do
   'two'
 end
 
-get '/cat' do
+get '/named-cat' do
+  p params
+  @name = params[:name]
+  erb(:index)
+end
+
+get '/random-cat' do
+  @name = ["Amigo", "Misty", "Almond"].sample
   erb(:index)
 end
